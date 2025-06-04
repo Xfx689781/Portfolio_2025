@@ -1,48 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuxuan's Portfolio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Edu+QLD+Hand:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&display=swap" rel="stylesheet">
 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Playfair Display', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
 
-    <style>
-        body {
-            background-color: #79bcff;
-            font-family:"cormorant garamond";
-            font-size: 20px;
-            background-image:url('./image_5.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            color: #ffffff;
-        }
-        
-  
-    </style>
+    .header {
+      position: relative;
+      height: 50vh;
+      background-image: url('img/51.jpg'); /* Replace with your image URL */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 4em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .header p {
+      font-size: 1.5em;
+      margin: 20px 0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    .content {
+      padding: 80px 120px;
+      background-image: url('img/image_5.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .content-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+
+    .content-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .content h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #c03030;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #036970;
+    }
+
+    .content img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      object-fit: cover; /* Ensure the image covers the container without stretching */
+      flex-shrink: 0;
+      margin-left: 20px; /* Added margin to move the image away from the text */
+    }
+
+    .next-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      flex-basis: 100%;
+      background-color:#333;
+    }
+
+    .next-page a {
+      display: inline-block;
+      padding: 15px 30px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .next-page a:hover {
+      background-color: #69b7f7;
+    }
+
+    .mountain-section {
+      margin-top: -20px; /* Adjust this value to move the "MOUNTAINS" section up */
+    }
+  </style>
 </head>
-<header>
-    <h1>
-        HOME
-    </h1>
-</header>
 <body>
-    <a href='index.html'">Back</a>
-     
+  <div class="header">
+    <div class="header-content">
+      <h1>HOME</h1>
+      <p></p>
     </div>
+  </div>
+  <div class="content">
+    <div class="content-section">
+      <div class="content-text">
+      
+      </div>
+    
+    </div>
+    <div class="content-section mountain-section">
+        <div class="content-text">
+    
+       </div>
+
+    </div>
+    
+    <div class="next-page">
+      
+      <a href="index.html">Back</a>
+      <a href="`">Next Page</a>
+      <a href="`">Next Page</a>
+      <a href="`">Next Page</a>
+
+    </div>
+  </div>
 </body>
 </html>
