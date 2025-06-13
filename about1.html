@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,10 @@
       margin: 0;
       font-family: 'Playfair Display', serif;
       color: #fff;
-      background-image: url('img/image_10.webp');
-      background-size: cover;
-      background-position: center;
+      background-image:url('img/image_10.webp');
+      background-size:cover;
+      background-position:center;
+      
     }
 
     .header {
@@ -59,32 +61,6 @@
       color: #eaeaea;
     }
 
-    .quiz-question {
-      margin: 40px 0;
-    }
-
-    .quiz-question button {
-      margin: 8px;
-      padding: 10px 20px;
-      font-size: 1em;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-      background-color: #555;
-      color: white;
-    }
-
-    .quiz-question button:hover:not(:disabled) {
-      background-color: #6a0dad;
-    }
-
-    .quiz-question .feedback {
-      margin-top: 10px;
-      font-style: italic;
-      color: #ffe26f;
-    }
-
     .nav-bar {
       display: none;
       justify-content: center;
@@ -123,27 +99,14 @@
   <div class="content" id="content">
     <p>Hello! I'm Fuxuan Xu, a passionate coder, thinker, and music lover. When I'm not building programs, you can find me analyzing ancient Chinese poetry or practicing Chopin on the piano.</p>
     <p>I love blending logic with creativity. That means not only solving problems in computer science class but also designing digital experiences that are beautiful, elegant, and functional.</p>
-    
-    <h2 style="margin-top: 60px;">Can You Guess?</h2>
-
-    <div class="quiz-question">
-      <p><strong>1. The computer language that Fuxuan learned first is?</strong></p>
-      <button onclick="checkAnswer(this, 'C')">A. C++</button>
-      <button onclick="checkAnswer(this, 'C')">B. JavaScript</button>
-      <button onclick="checkAnswer(this, 'C', true)">C. C Language</button>
-      <button onclick="checkAnswer(this, 'C')">D. Python</button>
-      <p class="feedback"></p>
-    </div>
-
-    <div class="quiz-question">
-      <p><strong>2. Which activity does Fuxuan enjoy the most?</strong></p>
-      <button onclick="checkAnswer(this, 'D')">A. Skydiving</button>
-      <button onclick="checkAnswer(this, 'D')">B. Cooking noodles</button>
-      <button onclick="checkAnswer(this, 'D')">C. Ice fishing</button>
-      <button onclick="checkAnswer(this, 'D', true)">D. Playing piano</button>
-      <p class="feedback"></p>
-    </div>
-
+    <p>Fun facts:</p>
+    <ul>
+      <li></li>
+      <li>I</li>
+      <li>!</li>
+      <li>.</li>
+    </ul>
+    <p>Thank you for visiting my portfolio. There's a lot more to explore — but only if you scroll to the end 👇</p>
     <p style="margin-top: 500px;">You made it! Time to explore the rest of the site 😄</p>
   </div>
 
@@ -155,24 +118,7 @@
   </div>
 
   <script>
-    // Quiz answer logic
-    function checkAnswer(button, correct, isCorrect = false) {
-      const questionDiv = button.parentElement;
-      const buttons = questionDiv.querySelectorAll("button");
-      const feedback = questionDiv.querySelector(".feedback");
-
-      buttons.forEach(btn => btn.disabled = true);
-
-      if (isCorrect) {
-        button.style.backgroundColor = '#4CAF50';
-        feedback.innerHTML = "✅ Correct!";
-      } else {
-        button.style.backgroundColor = '#c0392b';
-        feedback.innerHTML = `❌ Incorrect. The correct answer is <strong>${correct}</strong>.`;
-      }
-    }
-
-    // Scroll-triggered nav bar
+    // Show nav bar when user scrolls to bottom
     window.addEventListener("scroll", () => {
       const content = document.getElementById("content");
       const navBar = document.getElementById("navBar");
