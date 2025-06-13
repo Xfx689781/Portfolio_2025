@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poiret+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Playfair Display', sans-serif;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      background-image:url('img/image_10.webp');
+      background-size:cover;
+      background-position:center;
+      
     }
 
     .header {
       position: relative;
       height: 50vh;
-      background-image: url('img/image_7.jpg'); /* Replace with your image URL */
-      background-position: center;
-      background-repeat: no-repeat;
+      background-image: url('img/image_11.jpg');
       background-size: cover;
+      background-position: center;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      color: white;
     }
 
     .header::after {
@@ -35,8 +34,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
       height: 100%;
+      width: 100%;
       background: rgba(0, 0, 0, 0.5);
     }
 
@@ -46,121 +45,89 @@
     }
 
     .header h1 {
-      font-size: 4em;
+      font-size: 3.5em;
       margin: 0;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-
-    .header p {
-      font-size: 1.5em;
-      margin: 20px 0;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    }
-
-    .btn:hover {
-      background-color: #45a049;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     .content {
-      padding: 80px 120px;
-      background-image: url('img/image_5.jpg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    .content-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      margin-bottom: 40px;
-    }
-
-    .content-text {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .content h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #c03030;
-    }
-
-    .content p {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
       font-size: 1.2em;
-      line-height: 1.6;
-      color: #036970;
+      font-family: 'Poiret One', cursive;
+      color: #eaeaea;
     }
 
-    .content img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      object-fit: cover; /* Ensure the image covers the container without stretching */
-      flex-shrink: 0;
-      margin-left: 20px; /* Added margin to move the image away from the text */
-    }
-
-    .next-page {
-      display: flex;
+    .nav-bar {
+      display: none;
       justify-content: center;
-      align-items: center;
-
-      flex-basis: 100%;
-      background-color:#333;
+      flex-wrap: wrap;
+      background-color: #333;
+      padding: 15px;
+      gap: 20px;
     }
 
-    .next-page a {
-      display: inline-block;
-      padding: 15px 30px;
-      color: #fff;
+    .nav-bar a {
+      color: white;
       text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      padding: 12px 25px;
+      border-radius: 6px;
+      background-color: #444;
+      transition: background-color 0.3s ease;
+      font-size: 1.3em;
     }
 
-    .next-page a:hover {
-      background-color: #69b7f7;
+    .nav-bar a:hover {
+      background-color: #781eb1;
     }
 
-    .mountain-section {
-      margin-top: -20px; /* Adjust this value to move the "MOUNTAINS" section up */
+    .nav-bar.show {
+      display: flex;
     }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
-      <h1>ABOUT ME</h1>
-      <p>This is the home page for the portfolio of 2025 ICS4U course.</p>
+      <h1>About Me</h1>
     </div>
   </div>
-  <div class="content">
-    <div class="content-section">
-      <div class="content-text">
-      <P>
-        In this course, I've learned 
-      </P>
-      </div>
-    
-    </div>
-    <div class="content-section mountain-section">
-        <div class="content-text">
-    
-       </div>
 
-    </div>
-    
-    <div class="next-page">
-      
-      <a href="index.html">Back</a>
-      <a href="learn.html">What We Learned</a>
-      <a href="home.html">Home</a>
-      <a href="project.html">Example Project</a>
-
-    </div>
+  <div class="content" id="content">
+    <p>Hello! I'm Fuxuan Xu, a passionate coder, thinker, and music lover. When I'm not building programs, you can find me analyzing ancient Chinese poetry or practicing Chopin on the piano.</p>
+    <p>I love blending logic with creativity. That means not only solving problems in computer science class but also designing digital experiences that are beautiful, elegant, and functional.</p>
+    <p>Fun facts:</p>
+    <ul>
+      <li></li>
+      <li>I</li>
+      <li>!</li>
+      <li>.</li>
+    </ul>
+    <p>Thank you for visiting my portfolio. There's a lot more to explore — but only if you scroll to the end 👇</p>
+    <p style="margin-top: 500px;">You made it! Time to explore the rest of the site 😄</p>
   </div>
+
+  <div class="nav-bar" id="navBar">
+    <a href="index.html">Back</a>
+    <a href="learn.html">What We Learned</a>
+    <a href="project.html">Example Projects</a>
+    <a href="fun.html">Something Fun</a>
+  </div>
+
+  <script>
+    // Show nav bar when user scrolls to bottom
+    window.addEventListener("scroll", () => {
+      const content = document.getElementById("content");
+      const navBar = document.getElementById("navBar");
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const contentBottom = content.offsetTop + content.offsetHeight;
+
+      if (scrollBottom >= contentBottom - 50) {
+        navBar.classList.add("show");
+      }
+    });
+  </script>
 </body>
 </html>
