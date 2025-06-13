@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Example Projects</title>
+  <title>Meet Mr. J</title>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Playfair+Display&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      background: 
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
-        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background:
+        linear-gradient(rgba(10,10,30,0.85), rgba(10,10,30,0.95)),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Playfair Display', serif;
-      color: #f0f0f0;
+      color: #eee;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
       padding-bottom: 80px;
     }
 
     .header {
       width: 100%;
       height: 50vh;
-      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -34,6 +34,7 @@
       text-align: center;
       color: #fff;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      margin-bottom: 40px;
     }
 
     .header::after {
@@ -56,53 +57,55 @@
     }
 
     main {
-      max-width: 700px;
+      max-width: 600px;
       width: 90%;
-      margin: 40px auto;
-      font-family: 'Playfair Display', serif;
-    }
-
-    h2 {
-      font-family: 'Poiret One', cursive;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #ffd700;
-      text-shadow: 1px 1px 5px #000;
+      background: rgba(20,20,40,0.8);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #781eb1cc;
       text-align: center;
     }
 
-    ul.project-list {
-      list-style: none;
-      padding: 0;
+    main h2 {
+      font-family: 'Poiret One', cursive;
+      font-size: 2.8em;
+      margin-bottom: 25px;
+      color: #ffdd55;
+      text-shadow: 1px 1px 5px #000;
     }
 
-    ul.project-list li {
-      margin-bottom: 18px;
-      background: rgba(0,0,0,0.5);
-      padding: 15px 20px;
+    main p {
+      font-size: 1.3em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin: 10px 12px;
+      padding: 12px 28px;
+      font-family: 'Poiret One', cursive;
+      font-size: 1.3em;
+      border: none;
       border-radius: 8px;
+      background-color: #781eb1;
+      color: white;
+      cursor: pointer;
       transition: background-color 0.3s ease;
+      user-select: none;
     }
 
-    ul.project-list li:hover {
-      background-color: #3b0a8dcc;
-      box-shadow: 0 0 10px #781eb1;
+    button:hover {
+      background-color: #a13ddd;
     }
 
-    ul.project-list a {
-      color: #ffd700;
-      font-size: 1.4em;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: color 0.3s ease;
+    #response {
+      margin-top: 25px;
+      font-size: 1.5em;
+      font-weight: 600;
+      min-height: 2em;
     }
 
-    ul.project-list a:hover {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
+    /* Nav bar same style */
     .nav-bar {
       display: none;
       justify-content: center;
@@ -134,49 +137,36 @@
     .nav-bar.show {
       display: flex;
     }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .header h1 {
-        font-size: 2.5em;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-      ul.project-list a {
-        font-size: 1.2em;
-      }
-    }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="header-content">
-      <h1>Example Projects</h1>
+      <h1>Mr. J - Something Fun</h1>
     </div>
   </header>
 
   <main>
-    <h2>My Projects</h2>
-    <ul class="project-list">
-      <li><a href="ashstone_project.html" target="_blank" rel="noopener">AshStone Project</a></li>
-      <li><a href="pygamer.html" target="_blank" rel="noopener">PyGamer Game</a></li>
-      <li><a href="robot_tutorial.html" target="_blank" rel="noopener">Robot Tutorial</a></li>
-      <li><a href="javascript_review.html" target="_blank" rel="noopener">JavaScript Review</a></li>
-      <li><a href="linux.html" target="_blank" rel="noopener">Linux Exploration</a></li>
-      <li><a href="adt.html" target="_blank" rel="noopener">Abstract Data Types (ADT)</a></li>
-    </ul>
+    <h2>Meet Mr. J (The Teacher)</h2>
+    <p>Mr. J loves to test your wits! Ready for a quick quiz?</p>
+    <p><strong>Question:</strong> What’s Mr. J’s favorite programming language?</p>
+
+    <button onclick="checkAnswer('A')">A) Python</button>
+    <button onclick="checkAnswer('B')">B) JavaScript</button>
+    <button onclick="checkAnswer('C')">C) C++</button>
+    <button onclick="checkAnswer('D')">D) Ruby</button>
+
+    <p id="response"></p>
   </main>
 
   <nav class="nav-bar" id="navBar">
     <a href="index.html">Back</a>
     <a href="about.html">About Me</a>
     <a href="learn.html">What We Learned</a>
-    <a href="j.html">Guess What</a>
+    <a href="project.html">Example Projects</a>
   </nav>
 
   <script>
-    // Show nav bar when user scrolls near bottom of page
     window.addEventListener('scroll', () => {
       const navBar = document.getElementById('navBar');
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
@@ -185,6 +175,18 @@
         navBar.classList.remove('show');
       }
     });
+
+    function checkAnswer(choice) {
+      const correctAnswer = 'B';
+      const responseEl = document.getElementById('response');
+      if (choice === correctAnswer) {
+        responseEl.textContent = "🎉 Correct! Mr. J loves JavaScript!";
+        responseEl.style.color = "#4caf50";
+      } else {
+        responseEl.textContent = "❌ Nope! Try again.";
+        responseEl.style.color = "#f44336";
+      }
+    }
   </script>
 </body>
 </html>
