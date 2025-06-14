@@ -135,6 +135,15 @@
       background-color: #005fa3;
     }
 
+    .card a.locked {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+
+    .card a.locked:hover {
+      background-color: darkgray;
+    }
+
     @media (max-width: 768px) {
       .card {
         flex: 1 1 100%;
@@ -169,19 +178,19 @@
     <div class="card">
       <h2>What I've Learned</h2>
       <p>Explore the programming concepts, tools, and techniques I’ve mastered in ICS4U.</p>
-      <a href="learn.html">Explore</a>
+      <a href="#" class="locked" onclick="return false;">🔒 Explore</a>
     </div>
 
     <div class="card">
       <h2>Example Projects</h2>
       <p>See real code and creative builds – from games to utilities – made during this course.</p>
-      <a href="project.html">See Projects</a>
+      <a href="#" class="locked" onclick="return false;">🔒 See Projects</a>
     </div>
 
     <div class="card">
       <h2>Guess</h2>
       <p>Guess what it is. Just click in.</p>
-      <a href="j.html">R U Ready? Mr. J</a>
+      <a href="#" class="locked" onclick="return false;">🔒 R U Ready? Mr. J</a>
     </div>
   </div>
 

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>What We Learned</title>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Share+Tech+Mono&family=Poiret+One&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,7 +12,7 @@
       min-height: 100vh;
       background:
         linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+        url('img/image_16.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Roboto Slab', serif;
       color: #c0c0c0;
@@ -24,7 +25,7 @@
     .header {
       width: 100%;
       height: 50vh;
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      background-image: url('img/image_15.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -48,7 +49,7 @@
     }
 
     .header h1 {
-      font-family: 'Poiret One', cursive;
+      font-family: 'times new roman', cursive;
       font-size: 4em;
       margin: 0;
       color: #fff;
@@ -63,7 +64,7 @@
     }
 
     h1.page-title {
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'edu qld hand', monospace;
       font-size: 3rem;
       color: #00ffcc;
       text-shadow: 0 0 10px #00ffcc;
@@ -87,7 +88,7 @@
       z-index: 0;
     }
 
-    /* Make the whole step a clickable link */
+    /* Make the whole step clickable, but now a div */
     .step {
       position: relative;
       margin-bottom: 60px;
@@ -98,9 +99,17 @@
       transition: transform 0.3s ease, color 0.3s ease;
       cursor: pointer;
       border-radius: 8px;
+      user-select: none;
     }
 
-    .step:hover {
+    /* Disabled steps are dim and no pointer */
+    .step.disabled {
+      opacity: 0.5;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .step.enabled:hover {
       transform: translateX(10px);
       color: #00ffcc;
     }
@@ -121,7 +130,7 @@
       transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
-    .step:hover::before {
+    .step.enabled:hover::before {
       background: #001f1fdd;
       border-color: #00ffccaa;
       box-shadow: 0 0 30px #00ffee;
@@ -129,18 +138,33 @@
 
     .step h2 {
       margin: 0 0 8px;
-      font-family: 'Share Tech Mono', monospace;
+      font-family: 'edu qld hand', monospace;
       font-size: 1.8rem;
       color: inherit;
       transition: color 0.3s ease;
     }
 
+    /* Paragraph initially hidden */
     .step p {
       font-size: 1.1rem;
       line-height: 1.5;
+      font-family: 'edu qld hand', monospace;
       color: #a0f7e1dd;
       max-width: 550px;
-      transition: color 0.3s ease;
+      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, margin-top 0.5s ease, padding-top 0.5s ease;
+      padding-top: 0;
+      margin-top: 0;
+      user-select: text;
+    }
+
+    /* Show paragraph when expanded */
+    .step.expanded p {
+      max-height: 500px;
+      margin-top: 10px;
+      padding-top: 10px;
     }
 
     /* Arrow icon between steps */
@@ -156,6 +180,12 @@
       box-shadow: 0 0 10px #00ffcc;
       animation: pulse 2s infinite;
       z-index: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Hide arrow on last step */
+    .step:last-child .arrow {
+      display: none;
     }
 
     /* Pulse animation */
@@ -185,7 +215,7 @@
       border-radius: 6px;
       background-color: #444;
       transition: background-color 0.3s ease;
-      font-family: 'Poiret One', cursive;
+      font-family: 'edu qld hand', cursive;
       font-size: 1.3em;
     }
 
@@ -238,48 +268,49 @@
   </header>
 
   <main>
-    <a href="javascript_review.html" class="step">
+    <div class="step enabled" data-index="0">
       <h2>1. JavaScript Review</h2>
-      <p>Diving deep into JavaScript fundamentals, mastering DOM manipulation, event handling, and asynchronous programming to build dynamic websites.</p>
+      <p>Diving deep into JavaScript fundamentals, reviewing what I've learned about JavaScript in grade 11, and did some JavaScript-HTML interactions.</p>
+      <p>February 3: </p>
       <div class="arrow"></div>
-    </a>
+    </div>
 
-    <a href="adt.html" class="step">
+    <div class="step disabled" data-index="1">
       <h2>2. Abstract Data Types (ADT)</h2>
       <p>Exploring data organization with stacks, queues, and linked lists, understanding how these structures help solve complex problems efficiently.</p>
       <div class="arrow"></div>
-    </a>
+    </div>
 
-    <a href="pygamer.html" class="step">
+    <div class="step disabled" data-index="2">
       <h2>3. PyGamer</h2>
       <p>Creating interactive games with Python, learning to design engaging gameplay mechanics and control user input.</p>
       <div class="arrow"></div>
-    </a>
+    </div>
 
-    <a href="linux.html" class="step">
+    <div class="step disabled" data-index="3">
       <h2>4. Linux</h2>
       <p>Getting hands-on experience with Linux command line, file system, and scripting to harness the power of open-source operating systems.</p>
       <div class="arrow"></div>
-    </a>
+    </div>
 
-    <a href="ashstone_project.html" class="step">
+    <div class="step disabled" data-index="4">
       <h2>5. AshStone Project</h2>
       <p>A collaborative project blending programming skills with creativity to build a unique interactive digital experience.</p>
       <div class="arrow"></div>
-    </a>
+    </div>
 
-    <a href="robot_tutorial.html" class="step">
-      <h2>6. Robot Tutorial</h2>
+    <div class="step disabled" data-index="5">
+      <h2>6. mBot2 Testing</h2>
       <p>Learning robotics basics and programming autonomous behaviors to bring machines to life.</p>
-    </a>
+    </div>
+
+    <div class="step disabled" data-index="5">
+      <h2>7. Finishing the Course</h2>
+      <p>Graduating</p>
+    </div>
   </main>
 
-  <nav class="nav-bar" id="navBar">
-    <a href="index.html">Back</a>
-    <a href="about.html">About Me</a>
-    <a href="project.html">Example Projects</a>
-    <a href="j.html">Guess What</a>
-  </nav>
+  
 
   <script>
     // Show nav bar when user scrolls near bottom of page
@@ -291,6 +322,47 @@
         navBar.classList.remove('show');
       }
     });
+
+    // Accordion behavior and progressive enabling
+    const steps = document.querySelectorAll('.step');
+
+    steps.forEach((step, idx) => {
+      step.addEventListener('click', () => {
+        if (!step.classList.contains('enabled')) return;
+
+        const isExpanded = step.classList.contains('expanded');
+
+        // Collapse all others
+        steps.forEach((s, i) => {
+          if (i !== idx) {
+            s.classList.remove('expanded');
+          }
+        });
+
+        if (isExpanded) {
+          // Collapse current
+          step.classList.remove('expanded');
+        } else {
+          // Expand current
+          step.classList.add('expanded');
+          // Enable next step if exists
+          if (idx + 1 < steps.length) {
+            steps[idx + 1].classList.remove('disabled');
+            steps[idx + 1].classList.add('enabled');
+          }
+        }
+      });
+    });
   </script>
+
+  <script>
+  // Select the last step element (Robot Tutorial)
+  const finishingStep = document.querySelector('.step:last-of-type');
+
+  finishingStep.addEventListener('click', (e) => {
+    e.preventDefault();  // prevent the default link navigation
+    window.location.href = 'transition2.html';  // redirect to transition2.html
+  });
+</script>
 </body>
 </html>

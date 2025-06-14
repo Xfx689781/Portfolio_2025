@@ -6,7 +6,6 @@
   <title>About Me</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -87,47 +86,22 @@
       font-style: italic;
       color: #ffe26f;
     }
-
-    .nav-bar {
-      display: none;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #333;
-      padding: 15px;
-      gap: 20px;
-    }
-
-    .nav-bar a {
-      color: white;
-      text-decoration: none;
-      padding: 12px 25px;
-      border-radius: 6px;
-      background-color: #444;
-      transition: background-color 0.3s ease;
-      font-size: 1.3em;
-    }
-
-    .nav-bar a:hover {
-      background-color: #781eb1;
-    }
-
-    .nav-bar.show {
-      display: flex;
-    }
   </style>
 </head>
 <body>
   <div class="header">
     <div class="header-content">
       <h1>About Me</h1>
+      <p>Complete all the questions about me to unlock new pages</p>
     </div>
   </div>
 
-  <div class="content" id="content">
+  <div class="content">
     <p>Hello! I'm Fuxuan Xu! Today I wanna use a different way to introduce myself! There you needa answer some questions about me! Just guess, ok?</p>
     <p>I love blending logic with creativity. That means not only solving problems in computer science class but also designing digital experiences that are beautiful, elegant, and functional.</p>
     <h2 style="margin-top: 70px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Can You Guess?</h2>
 
+    <!-- Quiz Questions -->
     <div class="quiz-question">
       <p>1. Where was I born?</p>
       <button onclick="checkAnswer(this, 'A. Beijing',true)">A. Beijing</button>
@@ -136,7 +110,7 @@
       <button onclick="checkAnswer(this, 'A. Beijing')">D. Nanjing</button>
       <p class="feedback"></p>
     </div>
-    
+
     <div class="quiz-question">
       <p>2. What month was I born?</p>
       <button onclick="checkAnswer(this, 'B. June')">A. May</button>
@@ -145,7 +119,7 @@
       <button onclick="checkAnswer(this, 'B. June')">D. August</button>
       <p class="feedback"></p>
     </div>
-    
+
     <div class="quiz-question">
       <p>3. Which university will I go to?</p>
       <button onclick="checkAnswer(this, 'A. University of Toronto',true)">A. University of Toronto</button>
@@ -163,8 +137,7 @@
       <button onclick="checkAnswer(this, 'D. Mathematics', true)">D. Mathematics</button>
       <p class="feedback"></p>
     </div>
-    
-    
+
     <div class="quiz-question">
       <p>5. What is my favorite project in ICS4U?</p>
       <button onclick="checkAnswer(this, 'D. portfolio designing')">A. AshStone project</button>
@@ -173,7 +146,7 @@
       <button onclick="checkAnswer(this, 'D. portfolio designing', true)">D. portfolio design</button>
       <p class="feedback"></p>
     </div>
-    
+
     <div class="quiz-question">
       <p>6. The computer language that I learned first is?</p>
       <button onclick="checkAnswer(this, 'C. C Language')">A. C++</button>
@@ -211,53 +184,43 @@
     </div>
 
     <div class="quiz-question">
-      <p>10. Why did I take this course at ICS4U??</p>
-      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">A. Because my parents forced me too do that</button>
+      <p>10. Why did I take this course at ICS4U?</p>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">A. Because my parents forced me to</button>
       <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself',true)">B. Because I wanna challenge myself</button>
-      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">C. Because I need this course for university application</button>
-      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">D. Because I like Mr. Jamieson's teaching styles</button>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">C. Because I need this course for university</button>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">D. Because I like Mr. Jamieson's teaching style</button>
       <p class="feedback"></p>
     </div>
-
-    <p style="margin-top: 500px;">You made it! Time to explore the rest of the site 😄</p>
-  </div>
-
-  <div class="nav-bar" id="navBar">
-    <a href="index.html">Back</a>
-    <a href="learn.html">What We Learned</a>
-    <a href="project.html">Example Projects</a>
-    <a href="j.html">Guess What</a>
   </div>
 
   <script>
-    // Quiz answer logic
+    let answeredCount = 0;
+    const totalQuestions = document.querySelectorAll('.quiz-question').length;
+
     function checkAnswer(button, correct, isCorrect = false) {
       const questionDiv = button.parentElement;
       const buttons = questionDiv.querySelectorAll("button");
       const feedback = questionDiv.querySelector(".feedback");
 
+      if ([...buttons].some(btn => btn.disabled)) return;
+
       buttons.forEach(btn => btn.disabled = true);
+      answeredCount++;
 
       if (isCorrect) {
         button.style.backgroundColor = '#4CAF50';
         feedback.innerHTML = "✅ Correct!";
       } else {
         button.style.backgroundColor = '#c0392b';
-        feedback.innerHTML = `❌ Incorrect. The correct answer is ${correct}</strong>.`;
+        feedback.innerHTML = `❌ Incorrect. The correct answer is ${correct}.`;
+      }
+
+      if (answeredCount === totalQuestions) {
+        setTimeout(() => {
+          window.location.href = "transition.html";
+        }, 1500);
       }
     }
-
-    // Scroll-triggered nav bar
-    window.addEventListener("scroll", () => {
-      const content = document.getElementById("content");
-      const navBar = document.getElementById("navBar");
-      const scrollBottom = window.scrollY + window.innerHeight;
-      const contentBottom = content.offsetTop + content.offsetHeight;
-
-      if (scrollBottom >= contentBottom - 50) {
-        navBar.classList.add("show");
-      }
-    });
   </script>
 </body>
 </html>

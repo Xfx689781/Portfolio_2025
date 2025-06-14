@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      background-image: url('img/image_10.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .header {
+      position: relative;
+      height: 50vh;
+      background-image: url('img/image_11.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .content {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.2em;
+      font-family: 'edu qld hand', cursive;
+      color: #eaeaea;
+    }
+
+    .quiz-question {
+      margin: 40px 0;
+    }
+
+    .quiz-question button {
+      margin: 8px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      background-color: #032686;
+      color: white;
+      font-family:'Courier New', Courier, monospace;
+    }
+
+    .quiz-question button:hover:not(:disabled) {
+      background-color: #9500ff;
+    }
+
+    .quiz-question .feedback {
+      margin-top: 10px;
+      font-style: italic;
+      color: #ffe26f;
+    }
+
+    .nav-bar {
+      display: none;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #333;
+      padding: 15px;
+      gap: 20px;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      background-color: #444;
+      transition: background-color 0.3s ease;
+      font-size: 1.3em;
+    }
+
+    .nav-bar a:hover {
+      background-color: #781eb1;
+    }
+
+    .nav-bar.show {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <h1>About Me</h1>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <p>Hello! I'm Fuxuan Xu! Today I wanna use a different way to introduce myself! There you needa answer some questions about me! Just guess, ok?</p>
+    <p>I love blending logic with creativity. That means not only solving problems in computer science class but also designing digital experiences that are beautiful, elegant, and functional.</p>
+    <h2 style="margin-top: 70px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Can You Guess?</h2>
+
+    <div class="quiz-question">
+      <p>1. Where was I born?</p>
+      <button onclick="checkAnswer(this, 'A. Beijing',true)">A. Beijing</button>
+      <button onclick="checkAnswer(this, 'A. Beijing')">B. Shanghai</button>
+      <button onclick="checkAnswer(this, 'A. Beijing')">C. Guangzhou</button>
+      <button onclick="checkAnswer(this, 'A. Beijing')">D. Nanjing</button>
+      <p class="feedback"></p>
+    </div>
+    
+    <div class="quiz-question">
+      <p>2. What month was I born?</p>
+      <button onclick="checkAnswer(this, 'B. June')">A. May</button>
+      <button onclick="checkAnswer(this, 'B. June',true)">B. June</button>
+      <button onclick="checkAnswer(this, 'B. June')">C. July</button>
+      <button onclick="checkAnswer(this, 'B. June')">D. August</button>
+      <p class="feedback"></p>
+    </div>
+    
+    <div class="quiz-question">
+      <p>3. Which university will I go to?</p>
+      <button onclick="checkAnswer(this, 'A. University of Toronto',true)">A. University of Toronto</button>
+      <button onclick="checkAnswer(this, 'A. University of Toronto')">B. University of Ottawa</button>
+      <button onclick="checkAnswer(this, 'A. University of Toronto')">C. University of British Columbia</button>
+      <button onclick="checkAnswer(this, 'A. University of Toronto')">D. University of Waterloo</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>4. Which program in university will I go to?</p>
+      <button onclick="checkAnswer(this, 'D. Mathematics')">A. Computer Science</button>
+      <button onclick="checkAnswer(this, 'D. Mathematics')">B. Life Science</button>
+      <button onclick="checkAnswer(this, 'D. Mathematics')">C. Engineering</button>
+      <button onclick="checkAnswer(this, 'D. Mathematics', true)">D. Mathematics</button>
+      <p class="feedback"></p>
+    </div>
+    
+    
+    <div class="quiz-question">
+      <p>5. What is my favorite project in ICS4U?</p>
+      <button onclick="checkAnswer(this, 'D. portfolio designing')">A. AshStone project</button>
+      <button onclick="checkAnswer(this, 'D. portfolio designing')">B. ADT presentation</button>
+      <button onclick="checkAnswer(this, 'D. portfolio designing')">C. mBot2 testing</button>
+      <button onclick="checkAnswer(this, 'D. portfolio designing', true)">D. portfolio design</button>
+      <p class="feedback"></p>
+    </div>
+    
+    <div class="quiz-question">
+      <p>6. The computer language that I learned first is?</p>
+      <button onclick="checkAnswer(this, 'C. C Language')">A. C++</button>
+      <button onclick="checkAnswer(this, 'C. C Language')">B. JavaScript</button>
+      <button onclick="checkAnswer(this, 'C. C Language', true)">C. C Language</button>
+      <button onclick="checkAnswer(this, 'C. C Language')">D. Python</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>7. Which of the followings is my favorite AI?</p>
+      <button onclick="checkAnswer(this, 'B. ChatGPT')">A. DeepSeek</button>
+      <button onclick="checkAnswer(this, 'B. ChatGPT',true)">B. ChatGPT</button>
+      <button onclick="checkAnswer(this, 'B. ChatGPT')">C. MidJourney</button>
+      <button onclick="checkAnswer(this, 'B. ChatGPT')">D. Claude</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>8. Which activity do I enjoy the most?</p>
+      <button onclick="checkAnswer(this, 'D. playing instruments')">A. playing basketball</button>
+      <button onclick="checkAnswer(this, 'D. playing instruments')">B. cooking noodles</button>
+      <button onclick="checkAnswer(this, 'D. playing instruments')">C. tutoring others</button>
+      <button onclick="checkAnswer(this, 'D. playing instruments', true)">D. playing instruments</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>9. When did I come to Canada?</p>
+      <button onclick="checkAnswer(this, 'B. 2022')">A. 2021</button>
+      <button onclick="checkAnswer(this, 'B. 2022',true)">B. 2022</button>
+      <button onclick="checkAnswer(this, 'B. 2022')">C. 2023</button>
+      <button onclick="checkAnswer(this, 'B. 2022')">D. 2024</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>10. Why did I take this course at ICS4U??</p>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">A. Because my parents forced me too do that</button>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself',true)">B. Because I wanna challenge myself</button>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">C. Because I need this course for university application</button>
+      <button onclick="checkAnswer(this, 'B. Because I wanna challenge myself')">D. Because I like Mr. Jamieson's teaching styles</button>
+      <p class="feedback"></p>
+    </div>
+
+    <p style="margin-top: 500px;">You made it! Time to explore the rest of the site 😄</p>
+  </div>
+
+  <div class="nav-bar" id="navBar">
+    <a href="index.html">Back</a>
+    <a href="learn.html">What We Learned</a>
+    <a href="project.html">Example Projects</a>
+    <a href="j.html">Guess What</a>
+  </div>
+
+  <script>
+    // Quiz answer logic
+    function checkAnswer(button, correct, isCorrect = false) {
+      const questionDiv = button.parentElement;
+      const buttons = questionDiv.querySelectorAll("button");
+      const feedback = questionDiv.querySelector(".feedback");
+
+      buttons.forEach(btn => btn.disabled = true);
+
+      if (isCorrect) {
+        button.style.backgroundColor = '#4CAF50';
+        feedback.innerHTML = "✅ Correct!";
+      } else {
+        button.style.backgroundColor = '#c0392b';
+        feedback.innerHTML = `❌ Incorrect. The correct answer is ${correct}</strong>.`;
+      }
+    }
+
+    // Scroll-triggered nav bar
+    window.addEventListener("scroll", () => {
+      const content = document.getElementById("content");
+      const navBar = document.getElementById("navBar");
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const contentBottom = content.offsetTop + content.offsetHeight;
+
+      if (scrollBottom >= contentBottom - 50) {
+        navBar.classList.add("show");
+      }
+    });
+  </script>
+</body>
+</html>
