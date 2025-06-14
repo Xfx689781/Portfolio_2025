@@ -17,8 +17,8 @@
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #000;
+      color: #eee;
     }
 
     .header {
@@ -59,8 +59,32 @@
       text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 
+  
+    .galactic-banner {
+      width: 100%;
+      background: radial-gradient(circle at center, #2a004d, #000022 80%);
+      color: #ffffff;
+      font-family: 'Poiret One', cursive;
+      font-size: 2.8em;
+      text-align: center;
+      padding: 40px 0;
+      letter-spacing: 5px;
+      font-style: italic;
+      text-shadow: 0 0 10px #bb86fc, 0 0 20px #fff, 0 0 30px #8a2be2;
+      animation: starsGlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes starsGlow {
+      0% {
+        text-shadow: 0 0 10px #bb86fc, 0 0 20px #fff, 0 0 30px #8a2be2;
+      }
+      100% {
+        text-shadow: 0 0 15px #ffffff, 0 0 30px #ff00ff, 0 0 40px #9b30ff;
+      }
+    }
+
     .nav-bar {
-      background-color: #333;
+      background-color: #111;
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -73,7 +97,7 @@
       text-decoration: none;
       padding: 12px 25px;
       border-radius: 6px;
-      background-color: #333;
+      background-color: #222;
       transition: background-color 0.3s ease;
       font-family: 'Poiret One', cursive;
       font-size: 1.4em;
@@ -103,6 +127,7 @@
       min-width: 280px;
       text-align: center;
       transition: transform 0.3s;
+      color: #111;
     }
 
     .card:hover {
@@ -164,15 +189,15 @@
     </div>
   </div>
 
-  <div class="nav-bar">
-    <a href="index.html">Back</a>
+  <div class="galactic-banner">
+    GO AHEAD...
   </div>
 
   <div class="section-preview">
     <div class="card">
       <h2>About Me</h2>
       <p>Learn more about who I am, what I love, and what drives my passion for coding and creativity.</p>
-      <a href="#" class="locked" onclick="return false;">YOU'VE ALREADY FINISHED THIS PAGE</a>
+      <a href="learn.html">ONE MORE CHANCE TO STEP BACK...</a>
     </div>
 
     <div class="card">

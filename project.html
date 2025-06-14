@@ -10,7 +10,7 @@
       margin: 0;
       background: 
         linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)),
-        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+        url('img/image_22.avif') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Playfair Display', serif;
       color: #f0f0f0;
@@ -24,7 +24,7 @@
     .header {
       width: 100%;
       height: 50vh;
-      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
+      background-image: url('img/image_21.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -103,38 +103,6 @@
       text-decoration: underline;
     }
 
-    .nav-bar {
-      display: none;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #333;
-      padding: 15px;
-      gap: 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 10;
-    }
-
-    .nav-bar a {
-      color: white;
-      text-decoration: none;
-      padding: 12px 25px;
-      border-radius: 6px;
-      background-color: #444;
-      transition: background-color 0.3s ease;
-      font-family: 'Poiret One', cursive;
-      font-size: 1.3em;
-    }
-
-    .nav-bar a:hover {
-      background-color: #781eb1;
-    }
-
-    .nav-bar.show {
-      display: flex;
-    }
-
     /* Responsive */
     @media (max-width: 600px) {
       .header h1 {
@@ -152,39 +120,22 @@
 <body>
   <header class="header">
     <div class="header-content">
-      <h1>Example Projects</h1>
+      <h1>My Projects</h1>
     </div>
   </header>
 
   <main>
-    <h2>My Projects</h2>
+   
     <ul class="project-list">
-      <li><a href="ashstone_project.html" target="_blank" rel="noopener">AshStone Project</a></li>
-      <li><a href="pygamer.html" target="_blank" rel="noopener">PyGamer Game</a></li>
-      <li><a href="robot_tutorial.html" target="_blank" rel="noopener">Robot Tutorial</a></li>
-      <li><a href="javascript_review.html" target="_blank" rel="noopener">JavaScript Review</a></li>
-      <li><a href="linux.html" target="_blank" rel="noopener">Linux Exploration</a></li>
-      <li><a href="adt.html" target="_blank" rel="noopener">Abstract Data Types (ADT)</a></li>
+      <li><a href="ashstone_redirect.html" rel="noopener">The Internet Library (aka. AshStone Project) (2025)</a></li>
+      <li><a href="javascript_review.html" target="_blank" rel="noopener">Geometrical Calculator (2025)</a></li>
+      <li><a href="adt.html" target="_blank" rel="noopener">Abstract Data Types (2025)</a></li>
+       <li><a href="lastyear.html" target="_blank" rel="noopener">Last Year's Portfolio (2024)</a></li>
+       <li><a href="jokerjack.html" target="_blank" rel="noopener">Jokerjack Game (2024)</a></li>
+       <li><a href="china.html" target="_blank" rel="noopener">Exploring China Website (2024)</a></li>
+       <li><a href="career.html" target="_blank" rel="noopener">Career Assignment (2024)</a></li>
+       
     </ul>
   </main>
-
-  <nav class="nav-bar" id="navBar">
-    <a href="index.html">Back</a>
-    <a href="about.html">About Me</a>
-    <a href="learn.html">What We Learned</a>
-    <a href="j.html">Guess What</a>
-  </nav>
-
-  <script>
-    // Show nav bar when user scrolls near bottom of page
-    window.addEventListener('scroll', () => {
-      const navBar = document.getElementById('navBar');
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-        navBar.classList.add('show');
-      } else {
-        navBar.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 </html>

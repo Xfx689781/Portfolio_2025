@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fuxuan's Portfolio - Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .header {
+      position: relative;
+      height: 50vh;
+      background-image: url('img/image_17.avif');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header h1 {
+      font-size: 4em;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    }
+
+    .header p {
+      font-size: 1.3em;
+      margin-top: 10px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .nav-bar {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    .nav-bar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      background-color: #333;
+      transition: background-color 0.3s ease;
+      font-family: 'Poiret One', cursive;
+      font-size: 1.4em;
+    }
+
+    .nav-bar a:hover {
+      background-color: #2e0a5d;
+    }
+
+    .call-to-action {
+      width: 100%;
+      background: #000;
+      color: #0f0;
+      font-family: 'Caveat', cursive;
+      font-size: 2.5em;
+      text-align: center;
+      padding: 40px 0;
+      letter-spacing: 3px;
+      font-style: italic;
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+      border-top: 2px solid #0f0;
+      border-bottom: 2px solid #0f0;
+      animation: typing 4s steps(30, end), flicker 1.5s infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0;
+      }
+    }
+
+    .section-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 10%;
+      background-image: url('img/image_18.avif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 30px;
+      flex: 1 1 40%;
+      min-width: 280px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-family: 'Poiret One', cursive;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007acc;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background-color: #005fa3;
+    }
+
+    .card a.locked {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+
+    .card a.locked:hover {
+      background-color: darkgray;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex: 1 1 100%;
+      }
+
+      .header h1 {
+        font-size: 3em;
+      }
+
+      .call-to-action {
+        font-size: 1.8em;
+        padding: 30px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-content">
+      <h1>New Page Unlocked!</h1>
+      <p>ICS4U 2025 – Created by Fuxuan Xu</p>
+    </div>
+  </div>
+
+  <div class="call-to-action">
+    WANNA CONTINUE? COME ON!
+  </div>
+
+  <div class="section-preview">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>Learn more about who I am, what I love, and what drives my passion for coding and creativity.</p>
+      <a href="#" class="locked" onclick="return false;">DON'T LOOK BACK! IT'S TOO LATE...</a>
+    </div>
+
+    <div class="card">
+      <h2>What I've Learned</h2>
+      <p>Explore the programming concepts, tools, and techniques I’ve mastered in ICS4U.</p>
+      <a href="learn.html">ONE MORE CHANCE TO STEP BACK...</a>
+    </div>
+
+    <div class="card">
+      <h2>Example Projects</h2>
+      <p>See real code and creative builds – from games to utilities – made during this course.</p>
+      <a href="project.html">Read More</a>
+    </div>
+
+    <div class="card">
+      <h2>Guess</h2>
+      <p>Guess what it is. Just click in.</p>
+      <a href="#" class="locked" onclick="return false;">🔒 R U Ready? Mr. J</a>
+    </div>
+  </div>
+
+</body>
+</html>
