@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fuxuan's Portfolio - Home</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: 'Playfair Display', serif;
       background-color: #f9f9f9;
       color: #333;
@@ -24,7 +26,7 @@
     .header {
       position: relative;
       height: 50vh;
-      background-image: url('img/image_19.jpg');
+      background-image: url('img/image_23.avif');
       background-position: center;
       background-size: cover;
       display: flex;
@@ -83,12 +85,44 @@
       background-color: #2e0a5d;
     }
 
+    .call-to-action {
+      width: 100%;
+      background: #000;
+      color: rgb(255, 255, 255);
+      font-family: 'Caveat', cursive;
+      font-size: 2.5em;
+      text-align: center;
+      padding: 40px 0;
+      letter-spacing: 3px;
+      font-style: italic;
+      text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255);
+      border-top: 2px solid rgb(255, 255, 255);
+      border-bottom: 2px solid rgb(255, 255, 255);
+      animation: typing 4s steps(30, end), flicker 1.5s infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0;
+      }
+    }
+
     .section-preview {
       display: flex;
       flex-wrap: wrap;
       gap: 40px;
       padding: 60px 10%;
-      background-image: url('img/image_18.avif');
+      background-image: url('img/image_24.avif');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -152,6 +186,11 @@
       .header h1 {
         font-size: 3em;
       }
+
+      .call-to-action {
+        font-size: 1.8em;
+        padding: 30px 0;
+      }
     }
   </style>
 </head>
@@ -163,9 +202,10 @@
       <p>ICS4U 2025 – Created by Fuxuan Xu</p>
     </div>
   </div>
-<div>
+
+  <div class="call-to-action">
     WANNA CONTINUE? COME ON!
-</div>
+  </div>
 
   <div class="section-preview">
     <div class="card">
@@ -177,19 +217,19 @@
     <div class="card">
       <h2>What I've Learned</h2>
       <p>Explore the programming concepts, tools, and techniques I’ve mastered in ICS4U.</p>
-      <a href="learn.html">ONE MORE CHANCE TO STEP BACK...</a>
+     <a href="#" class="locked" onclick="return false;">DON'T LOOK BACK! IT'S TOO LATE...</a>
     </div>
 
     <div class="card">
       <h2>Example Projects</h2>
       <p>See real code and creative builds – from games to utilities – made during this course.</p>
-      <a href="project.html">Read More</a>
+    <a href="project.html">ONE MORE CHANCE TO STEP BACK...</a>
     </div>
 
     <div class="card">
-      <h2>Guess</h2>
-      <p>Guess what it is. Just click in.</p>
-      <a href="#" class="locked" onclick="return false;">🔒 R U Ready? Mr. J</a>
+      <h2>???</h2>
+      <p>It's probably the Mr. J part...!</p>
+      <a href="transition4.html">Mr.J, CLICK!</a>
     </div>
   </div>
 
