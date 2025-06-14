@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Edu+QLD+Hand:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet" />
   <style>
@@ -55,7 +57,7 @@
       margin: 0 auto;
       line-height: 1.8;
       font-size: 1.2em;
-      font-family: 'Poiret One', cursive;
+      font-family: 'edu qld hand', cursive;
       color: #eaeaea;
     }
 
@@ -71,12 +73,13 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background 0.3s;
-      background-color: #555;
+      background-color: #032686;
       color: white;
+      font-family:'Courier New', Courier, monospace;
     }
 
     .quiz-question button:hover:not(:disabled) {
-      background-color: #6a0dad;
+      background-color: #9500ff;
     }
 
     .quiz-question .feedback {
@@ -123,23 +126,78 @@
   <div class="content" id="content">
     <p>Hello! I'm Fuxuan Xu! Today I wanna use a different way to introduce myself! There you needa answer some questions about me! Just guess, ok?</p>
     <p>I love blending logic with creativity. That means not only solving problems in computer science class but also designing digital experiences that are beautiful, elegant, and functional.</p>
-    <h2 style="margin-top: 60px;">Can You Guess?</h2>
+    <h2 style="margin-top: 70px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Can You Guess?</h2>
 
     <div class="quiz-question">
-      <p><strong>1. The computer language that Fuxuan learned first is?</strong></p>
-      <button onclick="checkAnswer(this, 'C')">A. C++</button>
-      <button onclick="checkAnswer(this, 'C')">B. JavaScript</button>
-      <button onclick="checkAnswer(this, 'C', true)">C. C Language</button>
-      <button onclick="checkAnswer(this, 'C')">D. Python</button>
+      <p>1. Where was I born?</p>
+      <button onclick="checkAnswer(this, 'A. Beijing',true)">A. Beijing</button>
+      <button onclick="checkAnswer(this, 'A. Beijing')">B. Shanghai</button>
+      <button onclick="checkAnswer(this, 'A. Beijing')">C. Guangzhou</button>
+      <button onclick="checkAnswer(this, 'A. Beijing')">D. Nanjing</button>
+      <p class="feedback"></p>
+    </div>
+    
+    <div class="quiz-question">
+      <p>2. What month was I born?</p>
+      <button onclick="checkAnswer(this, 'B. June')">A. May</button>
+      <button onclick="checkAnswer(this, 'B. June',true)">B. June</button>
+      <button onclick="checkAnswer(this, 'B. June')">C. July</button>
+      <button onclick="checkAnswer(this, 'B. June')">D. August</button>
+      <p class="feedback"></p>
+    </div>
+    
+    <div class="quiz-question">
+      <p>3. Which university will I go to?</p>
+      <button onclick="checkAnswer(this, 'A. University of Toronto',true)">A. University of Toronto</button>
+      <button onclick="checkAnswer(this, 'A. University of Toronto')">B. University of Ottawa</button>
+      <button onclick="checkAnswer(this, 'A. University of Toronto')">C. University of British Columbia</button>
+      <button onclick="checkAnswer(this, 'A. University of Toronto')">D. University of Waterloo</button>
       <p class="feedback"></p>
     </div>
 
     <div class="quiz-question">
-      <p><strong>2. Which activity does Fuxuan enjoy the most?</strong></p>
+      <p>4. Which program in university will I go to?</p>
+      <button onclick="checkAnswer(this, 'D. Mathematics')">A. Computer Science</button>
+      <button onclick="checkAnswer(this, 'D. Mathematics')">B. Life Science</button>
+      <button onclick="checkAnswer(this, 'D. Mathematics')">C. Engineering</button>
+      <button onclick="checkAnswer(this, 'D. Mathematics', true)">D. Mathematics</button>
+      <p class="feedback"></p>
+    </div>
+    
+    
+    <div class="quiz-question">
+      <p>5. What is my favorite project in ICS4U?</p>
+      <button onclick="checkAnswer(this, 'D. portfolio designing')">A. AshStone project</button>
+      <button onclick="checkAnswer(this, 'D. portfolio designing')">B. ADT presentation</button>
+      <button onclick="checkAnswer(this, 'D. portfolio designing')">C. mBot2 testing</button>
+      <button onclick="checkAnswer(this, 'D. portfolio designing', true)">D. portfolio design</button>
+      <p class="feedback"></p>
+    </div>
+    
+    <div class="quiz-question">
+      <p>6. The computer language that I learned first is?</p>
+      <button onclick="checkAnswer(this, 'C. C Language')">A. C++</button>
+      <button onclick="checkAnswer(this, 'C. C Language')">B. JavaScript</button>
+      <button onclick="checkAnswer(this, 'C. C Language', true)">C. C Language</button>
+      <button onclick="checkAnswer(this, 'C. C Language')">D. Python</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>7. Which of the followings is my favorite AI?</p>
+      <button onclick="checkAnswer(this, 'B. ChatGPT')">A. DeepSeek</button>
+      <button onclick="checkAnswer(this, 'B. ChatGPT',true)">B. ChatGPT</button>
+      <button onclick="checkAnswer(this, 'B. ChatGPT')">C. MidJourney</button>
+      <button onclick="checkAnswer(this, 'B. ChatGPT')">D. Claude</button>
+      <p class="feedback"></p>
+    </div>
+
+    <div class="quiz-question">
+      <p>8. Which activity do I enjoy the most?</p>
       <button onclick="checkAnswer(this, 'D')">A. Skydiving</button>
       <button onclick="checkAnswer(this, 'D')">B. Cooking noodles</button>
       <button onclick="checkAnswer(this, 'D')">C. Ice fishing</button>
-      <button onclick="checkAnswer(this, 'D', true)">D. Playing piano</button>
+      <button onclick="checkAnswer(this, 'D', true)">D. playing the piano</button>
       <p class="feedback"></p>
     </div>
 
@@ -167,7 +225,7 @@
         feedback.innerHTML = "✅ Correct!";
       } else {
         button.style.backgroundColor = '#c0392b';
-        feedback.innerHTML = `❌ Incorrect. The correct answer is <strong>${correct}</strong>.`;
+        feedback.innerHTML = `❌ Incorrect. The correct answer is ${correct}</strong>.`;
       }
     }
 
