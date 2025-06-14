@@ -2,191 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Meet Mr. J</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      background:
-        linear-gradient(rgba(10,10,30,0.85), rgba(10,10,30,0.95)),
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Playfair Display', serif;
-      color: #eee;
-      min-height: 100vh;
+      padding: 0;
+      height: 100%;
+      background-color: black;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 80px;
-    }
-
-    .header {
-      width: 100%;
-      height: 50vh;
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      position: relative;
-      text-align: center;
-      color: #fff;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-      margin-bottom: 40px;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial Narrow', sans-serif;
+      transition: opacity 3s ease;
+      opacity: 1;
     }
 
-    .header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .header h1 {
-      font-family: 'Poiret One', cursive;
-      font-size: 4em;
-      margin: 0;
-    }
-
-    main {
-      max-width: 600px;
-      width: 90%;
-      background: rgba(20,20,40,0.8);
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #781eb1cc;
-      text-align: center;
-    }
-
-    main h2 {
-      font-family: 'Poiret One', cursive;
+    .message {
+      color: white;
       font-size: 2.8em;
-      margin-bottom: 25px;
-      color: #ffdd55;
-      text-shadow: 1px 1px 5px #000;
+      opacity: 0;
+      animation: fadeIn 4s ease-in-out forwards;
+      text-align: center;
+      padding: 0 2rem;
     }
 
-    main p {
-      font-size: 1.3em;
-      line-height: 1.6;
-      margin-bottom: 15px;
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+        filter: blur(5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
     }
 
-    button {
-      margin: 10px 12px;
-      padding: 12px 28px;
-      font-family: 'Poiret One', cursive;
-      font-size: 1.3em;
-      border: none;
-      border-radius: 8px;
-      background-color: #781eb1;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
-
-    button:hover {
-      background-color: #a13ddd;
-    }
-
-    #response {
-      margin-top: 25px;
-      font-size: 1.5em;
-      font-weight: 600;
-      min-height: 2em;
-    }
-
-    /* Nav bar same style */
-    .nav-bar {
-      display: none;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #333;
-      padding: 15px;
-      gap: 20px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 10;
-    }
-
-    .nav-bar a {
-      color: white;
-      text-decoration: none;
-      padding: 12px 25px;
-      border-radius: 6px;
-      background-color: #444;
-      transition: background-color 0.3s ease;
-      font-family: 'Poiret One', cursive;
-      font-size: 1.3em;
-    }
-
-    .nav-bar a:hover {
-      background-color: #781eb1;
-    }
-
-    .nav-bar.show {
-      display: flex;
+    .fade-out {
+      opacity: 0;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-content">
-      <h1>Mr. J - Something Fun</h1>
-    </div>
-  </header>
-
-  <main>
-    <h2>Meet Mr. J (The Teacher)</h2>
-    <p>Mr. J loves to test your wits! Ready for a quick quiz?</p>
-    <p><strong>Question:</strong> What’s Mr. J’s favorite programming language?</p>
-
-    <button onclick="checkAnswer('A')">A) Python</button>
-    <button onclick="checkAnswer('B')">B) JavaScript</button>
-    <button onclick="checkAnswer('C')">C) C++</button>
-    <button onclick="checkAnswer('D')">D) Ruby</button>
-
-    <p id="response"></p>
-  </main>
-
-  <nav class="nav-bar" id="navBar">
-    <a href="index.html">Back</a>
-    <a href="about.html">About Me</a>
-    <a href="learn.html">What We Learned</a>
-    <a href="project.html">Example Projects</a>
-  </nav>
+  <div class="message" id="msg">Thank you for viewing my portfolio!</div>
 
   <script>
-    window.addEventListener('scroll', () => {
-      const navBar = document.getElementById('navBar');
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
-        navBar.classList.add('show');
-      } else {
-        navBar.classList.remove('show');
-      }
-    });
+    // Wait for message to fully fade in + linger
+    setTimeout(() => {
+      // Slowly fade out the entire page
+      document.body.classList.add("fade-out");
+    }, 7000); // message fades in by 4s, stays visible ~3s
 
-    function checkAnswer(choice) {
-      const correctAnswer = 'B';
-      const responseEl = document.getElementById('response');
-      if (choice === correctAnswer) {
-        responseEl.textContent = "🎉 Correct! Mr. J loves JavaScript!";
-        responseEl.style.color = "#4caf50";
-      } else {
-        responseEl.textContent = "❌ Nope! Try again.";
-        responseEl.style.color = "#f44336";
-      }
-    }
+    // Then redirect AFTER fade-out is complete
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 10500); // give a few seconds for fade-out
   </script>
 </body>
 </html>

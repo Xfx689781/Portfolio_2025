@@ -9,102 +9,116 @@
       margin: 0;
       padding: 0;
       height: 100%;
+      background-color: #39FF14;
+      animation: glitchBlink 0.1s steps(1, end) 90;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Arial Narrow', sans-serif;
-      background-color: #39FF14;
       overflow: hidden;
-      transition: background-color 0.1s;
+    }
+
+    @keyframes glitchBlink {
+      0%   { background-color: #39FF14; }
+      40%  { background-color: black; }
+      60% { background-color: #39FF14; }
+      70% { background-color: #ffffff; }
+      100% { background-color: #39FF14; }
     }
 
     .message {
       font-size: 4em;
       color: black;
-      text-align: center;
-      animation: textBlink 0.5s steps(1, end) infinite;
+      animation: textBlink 0.2s steps(1, end) 50;
+    }
+
+    .hidden {
+      display: none;
     }
 
     @keyframes textBlink {
-      0%, 100% { opacity: 1; }
-      50%      { opacity: 0; }
-    }
-
-    @keyframes greenBlackBlink {
-      0%, 100% { background-color: #39FF14; }
-      50% { background-color: black; }
-    }
-
-    .green-blink {
-      animation: greenBlackBlink 0.2s steps(1, end) infinite;
-    }
-
-    @keyframes chaoticGlitch {
-      0%   { background-color: #ff0000; }
-      10%  { background-color: #00ff00; }
-      20%  { background-color: #0000ff; }
-      30%  { background-color: #ffff00; }
-      40%  { background-color: #00ffff; }
-      50%  { background-color: #ff00ff; }
-      60%  { background-color: #ffffff; }
-      70%  { background-color: #ff8800; }
-      80%  { background-color: #8800ff; }
-      90%  { background-color: #ff0088; }
-      100% { background-color: black; }
-    }
-
-    .final-glitch {
-      animation: chaoticGlitch 1.5s steps(1, end) forwards;
+      0%, 100% { visibility: visible; }
+      50%      { visibility: hidden; }
     }
   </style>
 </head>
-<body class="green-blink">
+<body>
   <div id="msg" class="message">why we love mr. jamieson</div>
 
   <script>
-    const messages = [
-      { text: "why we love mr. jamieson", duration: 1500 },
-      { text: "it's because", duration: 800 },
-      { text: "...", duration: 1000 },
-      { text: "mr.", duration: 400 },
-      { text: "jamieson", duration: 300 },
-      { text: "is", duration: 250 },
-      { text: "a", duration: 200 },
-      { text: "humorous", duration: 200 },
-      { text: "and", duration: 180 },
-      { text: "good", duration: 160 },
-      { text: "teacher", duration: 150 },
-      { text: "and", duration: 130 },
-      { text: "his", duration: 120 },
-      { text: "classes", duration: 110 },
-      { text: "are", duration: 100 },
-      { text: "always", duration: 90 },
-      { text: "interesting", duration: 80 }
-    ];
-
-    const msgDiv = document.getElementById('msg');
-    const body = document.body;
-    let totalTime = 0;
-
-    messages.forEach((item, index) => {
-      setTimeout(() => {
-        msgDiv.textContent = item.text;
-        msgDiv.style.animationDuration = item.duration > 300 ? "0.5s" : "0.2s";
-      }, totalTime);
-      totalTime += item.duration;
-    });
-
-    // Final chaotic glitch
     setTimeout(() => {
-      body.classList.remove("green-blink");
-      body.classList.add("final-glitch");
-      msgDiv.style.display = "none";
-    }, totalTime);
-
-    // Redirect after glitch
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "it's because";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 3000);
+ setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "...";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 3500); 
+    setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "it's";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 5000); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "because";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 5500); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "mr.";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 6100); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "jamieson's";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 6700); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "classes";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 7250); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "are";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 7750); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "always";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 8200); 
+     setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.classList.add("hidden");
+      msg.textContent = "interesting!";
+      msg.classList.remove("hidden");
+      msg.style.animation = "textBlink 0.2s steps(1, end) 10";
+    }, 8600); 
     setTimeout(() => {
       window.location.href = "j.html";
-    }, totalTime + 2000);
+    }, 9000); // redirect after total of 9s
   </script>
 </body>
-</html>
+</html>  
